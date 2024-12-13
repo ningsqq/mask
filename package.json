@@ -1,5 +1,6 @@
 {
   "name": "webgl-shining-particles",
+  "author": "Dominik Fojcik",
   "private": false,
   "version": "0.1.2",
   "type": "module",
