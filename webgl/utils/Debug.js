@@ -12,7 +12,7 @@ export default class Debug {
 
     if (this.active) {
       this.gui = new GUI();
-      this.stats = new Stats(true);
+      this.stats = new Stats(false);
     }
   }
 
