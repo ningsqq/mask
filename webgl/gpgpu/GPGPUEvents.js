@@ -16,8 +16,6 @@ export default class GPGPUEvents {
         // Mouse
 
         this.mouseSpeed = 0;
-        this.currentMousePosition = new THREE.Vector2();
-        this.previousMousePosition = new THREE.Vector2();
 
 
         this.init();
@@ -63,12 +61,8 @@ export default class GPGPUEvents {
     update() {
         if (!this.mouse.cursorPosition) return; // Don't update if cursorPosition is undefined
 
-        this.currentMousePosition.set(this.mouse.cursorPosition.x, this.mouse.cursorPosition.y);
-
         this.mouseSpeed *= 0.85;
 
         if (this.uniforms.velocityUniforms.uMouseSpeed) this.uniforms.velocityUniforms.uMouseSpeed.value = this.mouseSpeed;
-
-        this.previousMousePosition.copy(this.currentMousePosition);
     }
 }
