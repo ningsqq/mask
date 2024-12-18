@@ -23,7 +23,9 @@ export default class Resources extends EventEmitter {
     Resources.instance = this;
 
     // Setup model loader
-    const dracoLoader = new DRACOLoader().setDecoderPath('/draco/');
+    const THREE_PATH = `https://unpkg.com/three@0.161.0`;
+    const dracoLoader = new DRACOLoader().setDecoderPath(`${THREE_PATH}/examples/jsm/libs/draco/`);
+
     this.loader = new GLTFLoader().setDRACOLoader(dracoLoader);
 
     this.models = {};
