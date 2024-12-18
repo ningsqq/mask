@@ -50,6 +50,7 @@ export default class Resources extends EventEmitter {
         // Emit ready when all models are loaded
         if (this.loadingCount === 0) {
           this.emit('ready');
+          document.body.classList.remove('is-loading');
         }
       },
       undefined,

@@ -8,6 +8,7 @@
 html {
   --color-bg: #000;
   --color-text: #797979;
+  --color-link: #fff;
 }
 
 body {
@@ -18,6 +19,29 @@ body {
   font-family: sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+}
+
+body:not(.is-loading) .loading {
+  display: none;
+}
+
+@keyframes loaderAnim {
+  0% {
+    transform: scaleX(0);
+    transform-origin: 0% 50%;
+  }
+  50% {
+    transform: scaleX(1);
+    transform-origin: 0% 50%;
+  }
+  50.1% {
+    transform: scaleX(1);
+    transform-origin: 100% 50%;
+  }
+  100% {
+    transform: scaleX(0);
+    transform-origin: 100% 50%;
+  }
 }
 
 @media (scripting: enabled) {
@@ -44,26 +68,7 @@ body {
       height: 1px;
       margin: 0 0 0 -50px;
       background: var(--color-link);
-      animation: loaderAnim 1.5s ease-in-out infinite alternate forwards;
-    }
-
-    @keyframes loaderAnim {
-      0% {
-        transform: scaleX(0);
-        transform-origin: 0% 50%;
-      }
-      50% {
-        transform: scaleX(1);
-        transform-origin: 0% 50%;
-      }
-      50.1% {
-        transform: scaleX(1);
-        transform-origin: 100% 50%;
-      }
-      100% {
-        transform: scaleX(0);
-        transform-origin: 100% 50%;
-      }
+      animation: loaderAnim 1.5s ease-in-out infinite forwards;
     }
   }
 }
