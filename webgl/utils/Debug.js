@@ -7,8 +7,8 @@ export default class Debug {
   static instance;
 
   constructor() {
-    // this.active = window.location.hash === '#debug';
-    this.active = true;
+    this.active = window.location.hash === '#debug';
+    // this.active = true;
 
     if (this.active) {
       this.gui = new GUI();
